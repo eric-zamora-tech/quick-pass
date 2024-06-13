@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="popup.css">
+    <title>Quick Pass</title>
+</head>
+<body>
+    <h3>Quick Pass</h3>
+    <label for="password-length-slider" >Password length: <span id="password-length-slider-label"></span></label>
+    <input type="range" min="1" max="100" value="15" id="password-length-slider">
+    <label> ABC
+        <input type="checkbox">
+    </label>
+    <label>abc
+        <input type="checkbox">
+    </label>
+    <input type="checkbox" name="characters-used" value="123">
+    <p>Generated Password: <br> <span id="generated-password"> </span></p>
+    <button id="generator">Generate Password</button>
+</body>
+<script src="popup.js"></script>
+</html>

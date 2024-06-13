@@ -1,0 +1,36 @@
+{
+    "manifest_version": 2,
+    "name": "Quick Pass",
+    "version": "1.0",
+
+    "description": "Generate a quick and secure password!",
+
+    "web_accessible_resources": [
+        "assets/icon16.png",
+        "assets/icon48.png",
+        "assets/icon128.png"
+    ],
+
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content-script.js"]
+        }
+    ],
+
+    "browser_action": {
+        "default_icon": {
+            "19": "assets/icon48.png",
+            "38": "assets/icon48.png"
+        },
+        "default_popup": "popup/popup.html"
+    },
+
+    "permissions": [ "storage", "tabs" ],
+
+
+    "icons": {
+        "48": "assets/icon48.png",
+        "96": "assets/icon126.png"
+    }
+}
