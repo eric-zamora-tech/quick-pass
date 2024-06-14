@@ -15,10 +15,12 @@ function generatePassword(characters, length) {
         generatedPassword += characters[randomCharacterIndex];
     }
     passwordField.innerHTML = `${generatedPassword}`;
+    console.log("blank");
 }
 
 passwordLengthSlider.oninput = function() {
-    passwordLengthSliderLabel.innerHTML = passwordLengthSlider.value;
-    generatePassword(chars, passwordLengthSlider.value)
+    len = passwordLengthSlider.value;
+    passwordLengthSliderLabel.innerHTML = len;
+    generatePassword(chars, len)
 }
 generatePasswordButton.addEventListener("click", () => generatePassword(chars, len));

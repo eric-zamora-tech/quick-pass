@@ -7,18 +7,31 @@
     <title>Quick Pass</title>
 </head>
 <body>
-    <h3>Quick Pass</h3>
-    <label for="password-length-slider" >Password length: <span id="password-length-slider-label"></span></label>
-    <input type="range" min="1" max="100" value="15" id="password-length-slider">
-    <label> ABC
-        <input type="checkbox">
-    </label>
-    <label>abc
-        <input type="checkbox">
-    </label>
-    <input type="checkbox" name="characters-used" value="123">
-    <p>Generated Password: <br> <span id="generated-password"> </span></p>
-    <button id="generator">Generate Password</button>
+    <h3>Quick Password Generator</h3>
+    <div class="d-flex flex-direction-column">
+        <p id="generated-password"></p>
+        <div>
+            <span id="password-length-slider-label"></span>
+            <input type="range" min="1" max="100" value="15" id="password-length-slider">
+            <button id="password-length-button-decrease">-</button>
+            <button id="password-length-button-increase">+</button>
+        </div>
+        <div class="d-flex">
+            <label>
+                <input type="checkbox" value="ABC">
+                ABC
+            </label>
+            <label>
+                <input type="checkbox" value="abc">
+                abc
+            </label>
+            <label>
+                <input type="checkbox" value="123">
+                123
+            </label>
+        </div>
+        <button class="button" id="generator">Generate Password</button>
+    </div>
 </body>
 <script src="popup.js"></script>
 </html>
