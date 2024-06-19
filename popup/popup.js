@@ -7,6 +7,7 @@ let includeLowerCaseLettersOption = document.getElementById("include-lower-case-
 let includeNumbersOption = document.getElementById("include-numbers-option");
 let includeSpecialCharactersOption = document.getElementById("include-special-characters-option");
 let generatedPasswordLabel = document.getElementById("generated-password-label");
+let regeneratePasswordButton = document.getElementById("regenerate-password-button");
 
 let passwordLength = 16;
 let availableCharacters = 0b1111;
@@ -68,5 +69,6 @@ updatePassword();
 
 increasePasswordLengthButton.addEventListener("click", () => {updatePasswordLength(++passwordLength)});
 decreasePasswordLengthButton.addEventListener("click", () => {updatePasswordLength(--passwordLength)});
+regeneratePasswordButton.addEventListener("click", () => {updatePassword()});
 passwordLengthSlider.addEventListener("input", (e) => {updatePasswordLength(e.target.value)});
 document.querySelectorAll("input[type='checkbox']").forEach(cb => {cb.addEventListener("change", (e) => {updateAvailableCharacters(e)});});
