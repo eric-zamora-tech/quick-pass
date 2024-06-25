@@ -1,5 +1,9 @@
 body {
-    width: 500px;
+    width: 400px;
+}
+
+img {
+    display: inline;
 }
 
 .button {
@@ -10,9 +14,24 @@ body {
     display: flex;
     gap: 20px;
     align-items: bottom;
+    margin: 25px;
+}
+
+.justify-space-between {
+    width: 100%;
+    justify-content: space-between;
+    background-color: red;
 }
 
 .flex-direction-column {
     flex-direction: column; 
     align-items: center;
+}
+
+#generated-password-label {
+    width: 100%;
+    border: 1px solid rgb(205, 205, 205);
+    border-radius: 3px;
+    padding: 10px;
+    margin: 0;
 }
