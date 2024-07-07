@@ -23,14 +23,14 @@
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M208 0H332.1c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48zM48 128h80v64H64V448H256V416h64v48c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48z"/></svg>
             </a>
         </div>
-        <progress class="w-100 mb-2" value="32" max="100">32%</progress>
+        <meter id="password-strength-bar" class="w-100 mb-2" min="0" low="34" high="67" optimum="80" max="100"></meter>
         <div class="flex-spacebetween w-100 mb-1">
             <h2>Password Length</h2>
             <span id="password-length-label"></span>
         </div>
         <input class="w-100 mb-2" type="range" min="1" max="100" value="15" id="password-length-slider">
         <h2 class="w-100 mb-1">Password Settings</h2>
-        <div class="grid w-100">
+        <div class="grid w-100 mb-2">
             <label class="mb-1">
                 <input type="checkbox" value="3" id="include-upper-case-letters-option">
                 Uppercase (A-Z)
@@ -48,36 +48,7 @@
                 Symbols (!-$^+)
             </label>
         </div>
+        <button class="w-100" id="regenerate-password-button">Generate Password</button>
     </section>
-    <!-- <div class="d-flex flex-direction-column">
-        <div class="d-flex flex-direction-column" style="">
-            <div class="d-flex justify-space-between">
-                <span>Password Length</span>
-                <span id="password-length-label"></span>
-            </div>
-            <input type="range" min="1" max="100" value="15" id="password-length-slider">
-            <button id="decrease-password-length-button">-</button>
-            <button id="increase-password-length-button">+</button>
-            <button id="regenerate-password-button">↻</button>
-        </div>
-        <div class="d-flex">
-            <label>
-                <input type="checkbox" value="3" id="include-upper-case-letters-option">
-                ABC
-            </label>
-            <label>
-                <input type="checkbox" value="2" id="include-lower-case-letters-option">
-                abc
-            </label>
-            <label>
-                <input type="checkbox" value="1" id="include-numbers-option">
-                123
-            </label>
-            <label>
-                <input type="checkbox" value="0" id="include-special-characters-option">
-                @#$
-            </label>
-        </div>
-    </div> -->
 </body>
 </html>
