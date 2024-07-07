@@ -1,18 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="popup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="popup.js" defer></script>
     <title>Quick Pass</title>
 </head>
 <body>
-    <h3>Quick Password Generator</h3>
+    <header>
+        <h1>Quick Password Generator</h1>
+    </header>
     <hr>
-    <div>
-        <span type="text" id="generated-password-label"></span>
-        <img src="../assets/copy-solid.svg" width="20">
-    </div>
+    <section>
+        <div class="flex-spacebetween outline-box w-100">
+            <p id="generated-password-label"></p>
+            <a id="copy-to-clipboard-icon" class="tooltip" href="#">
+                <span class="tooltip-text">Copied!</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M208 0H332.1c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48zM48 128h80v64H64V448H256V416h64v48c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48z"/></svg>
+            </a>
+        </div>
+        <progress class="w-100 mb-2" value="32" max="100">32%</progress>
+        <div class="flex-spacebetween w-100 mb-1">
+            <h2>Password Length</h2>
+            <span id="password-length-label"></span>
+        </div>
+        <input class="w-100 mb-2" type="range" min="1" max="100" value="15" id="password-length-slider">
+        <h2 class="w-100 mb-1">Password Settings</h2>
+        <div class="grid w-100">
+            <label class="mb-1">
+                <input type="checkbox" value="3" id="include-upper-case-letters-option">
+                Uppercase (A-Z)
+            </label>
+            <label class="mb-1">
+                <input type="checkbox" value="2" id="include-lower-case-letters-option">
+                Lowercase (a-z)
+            </label>
+            <label class="mb-1">
+                <input type="checkbox" value="1" id="include-numbers-option">
+                Numbers (0-9)
+            </label>
+            <label class="mb-1">
+                <input type="checkbox" value="0" id="include-special-characters-option">
+                Symbols (!-$^+)
+            </label>
+        </div>
+    </section>
     <!-- <div class="d-flex flex-direction-column">
         <div class="d-flex flex-direction-column" style="">
             <div class="d-flex justify-space-between">
@@ -44,5 +80,4 @@
         </div>
     </div> -->
 </body>
-<script src="popup.js"></script>
 </html>

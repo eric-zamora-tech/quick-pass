@@ -1,5 +1,3 @@
-let increasePasswordLengthButton = document.getElementById("increase-password-length-button");
-let decreasePasswordLengthButton = document.getElementById("decrease-password-length-button");
 let passwordLengthLabel = document.getElementById("password-length-label");
 let passwordLengthSlider = document.getElementById("password-length-slider");
 let includeUpperCaseLettersOption = document.getElementById("include-upper-case-letters-option");
@@ -7,12 +5,26 @@ let includeLowerCaseLettersOption = document.getElementById("include-lower-case-
 let includeNumbersOption = document.getElementById("include-numbers-option");
 let includeSpecialCharactersOption = document.getElementById("include-special-characters-option");
 let generatedPasswordLabel = document.getElementById("generated-password-label");
-let regeneratePasswordButton = document.getElementById("regenerate-password-button");
+// let regeneratePasswordButton = document.getElementById("regenerate-password-button");
+let copyToClipboardIcon = document.getElementById("copy-to-clipboard-icon");
+let toolTipText = document.getElementsByClassName("tooltip-text");
 
 let passwordLength = 16;
 let availableCharacters = 0b1111;
 let generatedPassword = "";
 
+function copyPasswordToClipboard() {
+    navigator.clipboard.writeText(generatedPasswordLabel.innerText);
+    console.log("blank");
+    toolTipText[0].style.visibility = "visible";
+    toolTipText[0].style.opacity = "1";
+    setTimeout(() => {
+        toolTipText[0].style.opacity = "0";
+    }, 2000);
+    setTimeout(() => {
+        toolTipText[0].style.visibility = "hidden";
+    }, 2500);
+}
 
 function updatePassword() {
     generatedPassword = generatePassword(passwordLength, availableCharacters);
@@ -55,20 +67,20 @@ function generatePassword(len, availableCharacters) {
     if(availableCharacters & 0b1000) selectedCharacters += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     if(availableCharacters & 0b0100) selectedCharacters += "abcdefghijklmnopqrstuvwxyz";
     if(availableCharacters & 0b0010) selectedCharacters += "0123456789";
-    if(availableCharacters & 0b0001) selectedCharacters += "~`! @#$%^&*()_-+={[}]|:;'<,>.?/";
+    if(availableCharacters & 0b0001) selectedCharacters += "!\"#$%" + String.fromCharCode(38) + "'()*+,-./:;" + String.fromCharCode(60) + "=>?@[\\]^_`{|}~";
 
     for(let i = 0; i < len; i++) {
         let randomCharacterIndex = Math.floor(Math.random() * selectedCharacters.length);
         randomPassword += selectedCharacters[randomCharacterIndex];
     }
 
+    console.log(typeof(randomPassword), len, randomPassword);
     return randomPassword;
 }
     
 updatePassword();
 
-increasePasswordLengthButton.addEventListener("click", () => {updatePasswordLength(++passwordLength)});
-decreasePasswordLengthButton.addEventListener("click", () => {updatePasswordLength(--passwordLength)});
-regeneratePasswordButton.addEventListener("click", () => {updatePassword()});
+// regeneratePasswordButton.addEventListener("click", () => {updatePassword()});
 passwordLengthSlider.addEventListener("input", (e) => {updatePasswordLength(e.target.value)});
 document.querySelectorAll("input[type='checkbox']").forEach(cb => {cb.addEventListener("change", (e) => {updateAvailableCharacters(e)});});
+copyToClipboardIcon.addEventListener("click", (e) => {copyPasswordToClipboard()});

@@ -1,37 +1,103 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
 body {
     width: 400px;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
 }
 
-img {
-    display: inline;
+header, section {
+    padding: 1.25rem;
 }
 
-.button {
-    margin: 1rem 0;
+hr {
+    border: none;
+    height: 1px;
+    background-color: #bebebe;
 }
 
-.d-flex {
+h1 {
+    font-size: 1.25rem;
+}
+
+h2 {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+svg {
+    width: 15px;
+    fill: #a0a0a0;
+}
+
+label {
+    color: #3d3d3d;
+}
+
+.mb-1 {
+    margin-bottom: 0.5rem;
+}
+
+.mb-2 {
+    margin-bottom: 1rem;
+}
+
+.flex-spacebetween {
     display: flex;
-    gap: 20px;
-    align-items: bottom;
-    margin: 25px;
-}
-
-.justify-space-between {
-    width: 100%;
-    justify-content: space-between;
-    background-color: red;
-}
-
-.flex-direction-column {
-    flex-direction: column; 
     align-items: center;
+    justify-content: space-between;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.outline-box {
+    box-sizing: border-box;
+    padding: 0 0.75rem;
+    border: 1px solid #bebebe;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: 75px;
+    background-color: #555;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -600%;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 
 #generated-password-label {
-    width: 100%;
-    border: 1px solid rgb(205, 205, 205);
-    border-radius: 3px;
-    padding: 10px;
-    margin: 0;
+    overflow: scroll;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    max-width: 40ch;
+    scrollbar-width: none;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 0.8rem;
+    color: #007268;
+    padding: 1rem 0;
 }
