@@ -11,7 +11,9 @@
   <a href="#credits">Credits</a>
 </p>
 
-![screenshot](https://raw.githubusercontent.com/eric-zamora-tech/quick-password-generator/main/assets/screenshot.png)
+<div align="center">
+<img src="https://raw.githubusercontent.com/eric-zamora-tech/quick-pass/main/assets/showcase.png"/>
+</div>
 
 ## Key Features
 
